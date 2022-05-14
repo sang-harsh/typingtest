@@ -25,7 +25,7 @@ quoteInputElement.addEventListener('input',()=>{
             }
       }) 
       if(correct) {
-            alert(`Time taken to type the quote is ${endTime}+ Seconds.\nYour speed is ${Math.floor(noOfCharecters/endTime)} char/sec.`);
+            alert(`Time taken to type the quote is ${endTime}+ Seconds.\nYour speed is ${Math.ceil(noOfCharecters/endTime)} char/sec.`);
             renderNewQuote();
       };
 });
