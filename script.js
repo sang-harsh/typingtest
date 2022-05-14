@@ -7,7 +7,7 @@ quoteInputElement.addEventListener('input',()=>{
       const arrayQuote = quoteDisplayElement.querySelectorAll('span');
       noOfCharecters = arrayQuote.length;
       const arrayValue = quoteInputElement.value.split('');
-
+      let speed;
       let correct = true;
       arrayQuote.forEach((characterSpan,index)=>{
             const character = arrayValue[index];
@@ -25,7 +25,12 @@ quoteInputElement.addEventListener('input',()=>{
             }
       }) 
       if(correct) {
-            alert(`Time taken to type the quote is ${endTime}+ Seconds.\nYour speed is ${Math.ceil(noOfCharecters/endTime)} char/sec.`);
+            speed = Math.ceil(noOfCharecters/endTime);
+            if(speed<1){
+                  alert(`You are very slow.\nWork on your typing.\nYour speed is less than 1 char/sec.`);
+            }else{
+                  alert(`Time taken to type the quote is ${endTime}+ Seconds.\nYour speed is ${speed} char/sec.`);
+            }
             renderNewQuote();
       };
 });
